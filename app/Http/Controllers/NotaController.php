@@ -102,5 +102,9 @@ class NotaController extends Controller
     public function destroy($id)
     {
         //
+        $notaEliminar = App\Nota::findOrFail($id);
+        // Se elimina la nota por el método
+        $notaEliminar->delete();
+        return back()->with('mensaje', 'Nota eliminada');
     }
 }
