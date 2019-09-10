@@ -19,7 +19,7 @@
     <!-- Styles -->
   <style>
   .py-4, html{
-      background-color: #6c757d;
+      background-color: rgba(12,13,14,0.85);
       text-emphasis-color: #fff;
   }
  
@@ -29,11 +29,12 @@
 </head>
 <body>
     <div id="app" style="color:#F5F5F5;">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm " style="background-color : #6c757d; font-size: 18px;">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm " style="background-color : rgba(12,13,14,0.8); font-size: 18px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'laravel') }}
                 </a>
+                <a href="/bokeh" class="btn btn-primary btn-sm">Gráfica</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

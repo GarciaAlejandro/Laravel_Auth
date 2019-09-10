@@ -1,18 +1,17 @@
 
-<!doctype html>
-    <html lang="en">
-    <head>
-    <meta charset="utf-8">
-        <head>
-    <!-- Plotly.js -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"> </script>
+    <a href="/notas" class="btn btn-primary btn-sm">Regresar a Notas</a>
+  
 
-    </head>
-    <body>
+<head>
+        <!-- Plotly.js -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"> </script>
     
-    <div id="myDiv"></div>
+        </head>
     
-        <script>
+<body style="background:black;">
+    <div id="container" style="background:black;" ></div>
+    
+        <script >
           
         // function makeArr(startValue, stopValue, cardinality) {
         //     var arr = [];
@@ -33,22 +32,28 @@
         }
         var ejeY =[];
         for (let index = 0; index < ejeX.length; index++) {
-            ejeY.push( Math.sin(ejeX[index])/ejeX[index] );
-            
+            ejeY.push( Math.sin(ejeX[index])/ejeX[index]);
+            //ejeY.push( Math.atan(ejeX[index])  );
         }
             
 
             var trace1 = {
             x: ejeX,
             y: ejeY,
-            type: 'line',
+            type: 'scatter',
+            line:{
+                color:'rgb(255,0,0)'
+            }
             };
 
+            layout ={
+                plot_bgcolor: 'rgba(0, 0,0,0.4)',
+                paper_bgcolor:'rgba(0,0,0,0)'
+            };
         
             var data = [trace1];
 
-            Plotly.newPlot('myDiv', data, {}, {showSendToCloud: true});
+            Plotly.newPlot('container', data,layout, {showSendToCloud: true});
 
         </script>
-    </body>
-    </html>
+</body>

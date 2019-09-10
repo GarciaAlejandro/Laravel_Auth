@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="color:black;">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header d-flex justify-content-between align-items-center">Dashboard 
+                        <a href="/notas" class="btn btn-primary btn-sm">Ir a Notas</a>    
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +16,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Has iniciado sesión
                 </div>
             </div>
         </div>
