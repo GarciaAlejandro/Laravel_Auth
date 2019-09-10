@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/bokeh', function(){
+
+    return view('bokeh');
+});
+
+Auth::routes();
+
+Route::resource('/notas', 'NotaController');
+
+Route::get('/home', 'HomeController@index')->name('home');
