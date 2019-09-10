@@ -56,7 +56,7 @@ class NotaController extends Controller
         $nota->usuario = auth()->user()->email;
         $nota->save();
 
-        return back()->with('mensaje', 'Nota Agregada!');
+        return back()->with('mensaje', 'Nota Agregada');
     }
 
     /**
@@ -79,6 +79,8 @@ class NotaController extends Controller
     public function edit($id)
     {
         //
+        $nota = Nota::findOrFail($id);
+        return view('notas.editar', compact('nota'));
     }
 
     /**
@@ -91,6 +93,11 @@ class NotaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $notaActualizada = Nota::find($id);
+        $notaActualizada->nombre = $request->nombre;
+        $notaActualizada->descripción = $request->descripcion;
+        $notaActualizada->save();
+        return back()->with('mensaje', 'Nota editada');
     }
 
     /**
@@ -101,8 +108,9 @@ class NotaController extends Controller
      */
     public function destroy($id)
     {
+
         //
-        $notaEliminar = App\Nota::findOrFail($id);
+        $notaEliminar = Nota::findOrFail($id);
         // Se elimina la nota por el método
         $notaEliminar->delete();
         return back()->with('mensaje', 'Nota eliminada');

@@ -26,12 +26,26 @@
                                 <th scope="row">{{ $item->id }}</th>
                                 <td>{{ $item->nombre }}</td>
                                 <td>{{ $item->descripción }}</td>
-                                <td>Acción</td>
+                                <td>
+                                    
+                                    <a href="{{route('notas.editar', $item)}}" class="btn btn-warning btn-sm">Editar</a>
+                                    
+                                    <form action="{{route('notas.eliminar', $item)}}" method="POST" class="d-inline">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm" type="submit" >Eliminar </button>
+                                       
+                                    </form>  
+                                             
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
                     {{$notas->links()}}
+                         @if ( session('mensaje') )
+                             <div class="alert alert-success">{{ session('mensaje') }}</div>
+                         @endif
                 {{-- fin card body --}}
                 </div>
             </div>

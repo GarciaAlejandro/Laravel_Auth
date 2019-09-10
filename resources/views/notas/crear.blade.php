@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <span>Agregar Nota</span>
-                    <a href="/notas" class="btn btn-primary btn-sm">Volver a lista de notas...</a>
+                    <a href="/notas" class="btn btn-primary btn-sm">Regresar a Notas</a>
                 </div>
                 <div class="card-body">     
                     <!-- Arroja mensaje de nota agregada  -->

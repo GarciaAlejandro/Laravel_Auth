@@ -25,3 +25,9 @@ Auth::routes();
 Route::resource('/notas', 'NotaController');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::delete('notas/{id}','NotaController@destroy')->name('notas.eliminar');
+
+Route::put('notas/{id}/edit','NotaController@edit')->name('notas.editar');
+
+Route::put('/editar/{id}', 'NotaController@update' )->name('notas.update');
