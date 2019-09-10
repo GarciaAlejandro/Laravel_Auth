@@ -17,14 +17,22 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+  <style>
+  .py-4, html{
+      background-color: #6c757d;
+      text-emphasis-color: #fff;
+  }
+ 
+
+  </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+    <div id="app" style="color:#F5F5F5;">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm " style="background-color : #6c757d; font-size: 18px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('app.name', 'laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -72,9 +80,12 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4">               
+           
             @yield('content')
+      
         </main>
+      
     </div>
 </body>
 </html>
